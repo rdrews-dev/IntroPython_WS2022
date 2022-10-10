@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inzane Syllabus Template
+% LaTeX Template
+% Version 1.2 (8.22.2019)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Zane Wolf (zwolf.mlxvi@gmail.com)
+%
+% I (Zane) have left a lot of instructions both in the .tex file and the .cls file that can guide you to customize this document to suite your tastes and requirements. Here is a brief guide: 
+%  - Changing the Main Color: .cls line 39
+%  - Adding more FAQs: .cls line 126 and .tex line 99
+%  - Adding TA emails: uncomment .cls lines 220 & 224 and .tex lines 85 and 89
+%  - Deleting the FAQ sidebar entirely: .tex line 188
+%  - Removing the Lab/TA Info and placing a brief Overview/About section in their place:        uncomment .tex line 91 and .cls line 227, and comment .cls lines for the LAB/TA info        that you no longer want (c. lines 184-227)
+
+%
+% I am also happy to help with crafting/designing modifications to this template to help suite your personal needs in a syllabus. Feel free to reach out! 
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{inzane_syllabus} % a4paper for A4
+
+\usepackage{booktabs, colortbl, xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{ltablex} 
+\usepackage{multirow}
+\setlist{nolistsep}
+
+\usepackage{lscape}
+\newcolumntype{r}{>{\hsize=0.9\hsize}X}
+\newcolumntype{w}{>{\hsize=0.6\hsize}X}
+\newcolumntype{m}{>{\hsize=.9\hsize}X}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\arraystretch}{2.0}
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\profilepic{TmpDrawing} % Profile picture, if the height of the picture is less than that of the circle, it will have a flat bottom. 
+
+
+% To remove any of the following, you need to comment/delete the lines in the .cls file (c. line 186). Commenting/deleting the lines below will produce an error. 
+
+%To add different lines, you will need to create the new command, e.g. \profPhone, in the .cls file c. line 76, and command to create the line in the side bar in the .cls file c. line 186
+
+\classname{Intro. Scientific Programming in Python} 
+\classnum{Geow-M317-325-21-1} 
+
+%%%%%%%%%%%%%%% PROF INFO
+\profname{R. Drews / W. Kappler}
+\officehours{Office Hrs: on demand.} 
+\office{GUZ 3U37 / 3U35}
+\site{\MYhref{https://uni-tuebingen.de/de/147603}{Website}} 
+\email{reinhard.drews@uni-tuebingen.de}
+
+%%%%%%%%%%%%%%% COURSE  INFO
+\prereq{Prereq: None}
+\classdays{Mondays}
+\classhours{08:15-10.00  }
+\classloc{3U03}
+
+%%%%%%%%%%%%%%% LAB INFO
+\labdays{Wednesdays}
+\labhours{16:00 - 20:00}
+\labloc{2U03}
+
+%%%%%%%%%%%%%%% TA INFO
+% \taAname{Prof. P. Dietrich}
+% \taAofficehours{Office Hrs: On demand}
+% \taAoffice{UFZ, Leipzig}
+% %\taAemail{peter.dietrich@ufz.de}
+% \taBname{R. Ershadi}
+% \taBofficehours{Office Hrs: On demand.}
+% \taBoffice{GUZ Level 3}
+% %\taBemail{mohammadreza.ershadi@uni-tuebingen.de}
+
+% \about{Fish make up the largest group of vertebrates on the planet, easily outnumbering mammals, marsupials, birds, and reptiles combined. Not only are they abundant, but they've diversified into an extraordinary array of sizes, shapes, lifestyles, and habitats. You can find them in the coldest, deepest parts of the ocean, and in the hottest freshwater ponds in the desert. This course will explore fish diversity and their biology. } 
+
+
+%---------------------------------------------------------------------------------------
+%	 FAQs
+%----------------------------------------------------------------------------------------
+%to add more questions or remove this section, go to the .cls file and start with lines comment
+%lines 226-250. Also comment out this section as well as line 152(ish), the command \makeSide
+
+\qOne{Is this course hard?}
+\aOne{Not sure. If you have some technical affinity combined with some desire to problem solve you are off to a good start. If you don't have these skills definitely take the course.}
+
+\qTwo{How to pass the exam?}
+\aTwo{Show us that you mastered programming and actively worked with the exercises. For top grades you need to impress us by transferring some skills to problems that we may not have treated in class.}
+
+\qThree{Why do I have to suffer through this?}
+\aThree{You don't as there are other containers to choose from. However, it will be a useful baseline for other containers, and hopefully equip you with  technical skills needed for MSc projects. Some people say that programming experience helps you to find jobs. }
+
+\qFour{Can I call myself a computer scientist after this course?}
+\aFour{Not quite. But you can talk to them better than before.}
+
+\qFive{This container stuff is confusing.}
+\aFive{You will get the hang of it. It will continuously evolve and is designed to give you plenty of options to develop skills in areas that interest you. Don't hesitate to give us feedback.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 DESCRIPTION
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 OVERVIEW
+%----------------------------------------------------------------------------------------
+\section{Module Context}
+
+World-wide technical advances in monitoring the surface and sub-surface result in a new data environment for modern Geo- and Environmental sciences. Problem solving increasingly requires rigorous models and also integration of observations varying in space and time. Extracting the relevant information is achieved with computational methods that also require an understanding of the underlying mathematical principles. The goals of the 6 ECTS module \textit{Data and Modelling Methods in Geo- and Environmental Sciences} are (1) that students are able to understand selected mathematical concepts, (2) that they can implement them computationally, and (3) that they can apply them to geo- and environmental related problems. The module is subdivided into several 2 ECTS containers which are graded individually, and which can be combined to complete the full module. For the WS 2021-2022 available containers are:
+\setlength{\tabcolsep}{0.1em}
+\begin{center}
+\begin{tabular}{l c}
+ \multicolumn{2}{c}{{\color{myCOLOR}Data and Modelling Methods in Geo- and Environmental Sciences (WS 22/23)}} \\
+ \hline
+ {\color{blue} Scientific Programming (Python)} & {\color{blue}Drews \& Kappler} \\ 
+ Scientific Programming (Matlab)   & Zarfl \\
+ Time Series Analysis 1  & Rehfeld \\
+ %Deformation Processes \& Structure & 21.12.21 - 25.01.22 & Bons \\
+ Machine Learning 1  & Goswami \\ 
+ Machine Learning 2  & Goswami \\
+\end{tabular}
+\end{center}
+A similar module will also exist in the SS, e.g., with courses pertaining to Finite Element Method (Cirpka), Principles of Model Calibration (Finke), GIS (Zarfl), Advanced Time Series Analysis (Rehfeld), and Geostatistics (Haslauer). 
+
+\vspace{0.5cm} %I make liberal use of the \vspace{} command to partition and place sections just how I want them. Alter as you see fit. 
+\section{Container Content}
+
+
+The goal of the course is to provide an introduction into scientific computing, data analysis and programming using Python. Specifically, students will gain knowledge with respect to i) reading, writing, manipulating and plotting data ii) matrix algebra, solving linear equation systems and linear regression, iii) programming loops and conditional statements and writing functions and iv) solving simple differential equations and parameter inference. Weekly homework will be followed by final oral exam. 
+
+\section{Grading}
+
+Grading is based on small group projects (max. 4 members) which need to be solved at the end of the course. The results of the project will need to be presented in an oral presentation with questions directed to the individual group members. The presentations will take place shortly after the container has finished to minimize overlap with other containers.  
+
+\section{Preparation}
+
+In case you plan to use your own computer it is helpful that you have a running Python version already installed. We provide a virtual environment that can be run on any computer, please check the first exercise sheets prior to the lecture start. This will save us some time.
+
+\newpage % Start a new page
+
+\makeSide % Print the FAQ sidebar; To get rid of, simply comment out and uncomment \makeFullPage
+
+\section{Combination with other containers}
+
+Many other containers in this module will use some sort of programming expertise as pre-requiste. No other introduction will be provided. Not all containers will default to Python, however, from our experience students who have mastered Python can transition to, e.g., Matlab comparatively easily.
+
+\section{Material}
+
+In addition to the countless online resources some books (also available as online resource via the UB) may be helpful:
+\begin{itemize}
+\item \textit{Earth Observation using Python: A Practical Programming Guide}, Esmaili R., 978-1-119-60688-8 
+\item \textit{Introduction to Python in Earth Science Data Analysis}, Petrelli M., ISBN 978-3-030-78055-5 
+\item \textit{A Primer on Scientific Programming with Python}, Langtangen H. P., ISBN 978-3-662-49887-3
+\end{itemize}
+Some URLs that we would recommend:
+
+\url{https://www.studytonight.com/python/python-syntax-and-example}
+
+\url{https://www.studytonight.com/numpy/python-numpy-arrays}
+
+\url{https://www.studytonight.com/matplotlib/general-concepts-in-matplotlib}
+
+\url{https://www.w3schools.com/python/python_syntax.asp}
+
+\section{Course organization}
+
+All course organization will be handled via Ilias. During class time we will give you lots of time to do work yourself. Use it.  
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
+
+
+
