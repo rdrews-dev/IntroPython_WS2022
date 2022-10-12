@@ -1,0 +1,15 @@
+all: CollectionExercises.pdf
+
+clean:
+	rm -f *.aux *.dvi *.log *.out *.pdf
+	rm Includes/*.aux
+
+dependencies: Figures/20181031_140359.jpg \
+	Includes/Ex0.tex \
+	Includes/Ex1.tex \
+	Includes/Ex2.tex \
+	Includes/ExAdvanced.tex \
+	Src/Ex1/HelloWorld.py 
+
+CollectionExercises.pdf: CollectionExercises.tex Header.tex $(dependencies)
+	pdflatex CollectionExercises.tex
