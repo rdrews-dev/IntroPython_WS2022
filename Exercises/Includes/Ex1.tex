@@ -4,7 +4,6 @@ After the first subtle introduction, you should be able to fill out this table (
 \subsection{Data Types}
 
     \begin{center}
-    
       \label{tab:table1}
       \begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
         \textbf{Data Type} & \textbf{How to write in Python?} & \textbf{Geo- Env. Context}\\
@@ -21,26 +20,27 @@ After the first subtle introduction, you should be able to fill out this table (
       \end{tabular}
     \end{center}
     What is the difference between an element of an array, and the index of an array?
-  \ifanswers
+
+\ifanswers
   \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
   watermark color=white]
   \begin{center}
-   
       \label{tab:table1}
-      \begin{tabular}{l|l|l} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      % \begin{tabular}{l|l|l} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+        \begin{tabularx}{\linewidth}{ X | X | X }
         \textbf{Data Type} & \textbf{How to write in Python?} & \textbf{Geo- Env. Context}\\
         \hline
-        Integer & a = 1 & Sample number \\
-        Float & t = 20.9 & Temperature value \\
-        Boolean & TRUE, FALSE & Above or Below threshold?\\
-        List & [20.9,23.3,23.1] & Temperature time series\\
-        Tuple & MLoc = ("Location",-71.1,8.4) & Measurement Location \\
-        Dictionary & s = {"Name:","samp1","Year:",2022}  & Data structure\\
-        String & "Error!" & Error message\\
-        Numpy Array [Vec.] & np.array[(43.1,2.09,1)] & Time series\\
-        Numpy Array [Mat.] & np.array[(43.1,2],[.09,1)] & Image\\
-      \end{tabular}
+        Integer & \verb|a = 1| & Sample number \\
+        Float & \verb|t = 20.9| & Temperature value \\
+        Boolean & \verb|True, False| & Above or Below threshold? \\
+        List & \verb|[20.9,| \verb|23.3,| \verb|23.1]| & Temperature time series \\
+        Tuple & \verb|MLoc = ("Location",| \verb| -71.1, 8.4)| & Measurement Location \\
+        Dictionary & \verb|s =| \{\verb|"Name": "samp1",| \verb|"Year": 2022|\}  & Data structure\\
+        String & \verb|"Guten Tag!"| \verb|'Hello World!'| & Error message \\
+        Numpy Array [Vec.] & \verb|np.array[(43.1,| \verb| 2.09, 1)]| & Time series \\
+        Numpy Array [Mat.] & \verb|np.array[(43.1, 2],| \verb| [.09, 1)]| & Image \\
+      \end{tabularx}
     \end{center}
   The element of an array is the value for a given index (indices are only integers). The first element of an array is evaluated with the index 0. The last one with the index -1. 
   \end{tcolorbox}
@@ -51,9 +51,9 @@ After the first subtle introduction, you should be able to fill out this table (
 \label{sec:viskeeling}
 Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keeling curve. If you don't know what this is please inform yourself. The data are decimal years in the first column and CO2 in ppm in the second column. A lack of data is marked with negative numbers.
 \begin{itemize}
-\item Load the data (e.g., using numpy.loadtxt()).
+\item Load the data (e.g., using \verb|numpy.loadtxt()|).
 \item How many datapoints are in the time series? What are the dimensions of the data array?
-\item Visualise the data (e.g., using matplotlib) with  meaningful x- and y- limits and axis labels. Find out if the data are better visualised as points, curves or both. Change the color and symbols of the points.
+\item Visualise the data (e.g., using \verb|matplotlib|) with  meaningful x- and y- limits and axis labels. Find out if the data are better visualised as points, curves or both. Change the color and symbols of the points.
 \item Using python functions calculate basic quantities such as the mean, minimum and maximum of your time series. Are those values meaningful?
 \item Visualize only the first ten elements, the last ten elements, and elements from 20 to 30.
 \end{itemize}
@@ -62,8 +62,8 @@ Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keel
 \label{sec:mathfunc}
 Make use of some numpy functions (arange) and get a feel for some vector manipulation.
 \begin{itemize}
-  \item Visualize $f(t)=\sin(\omega t + \phi_0)$ for a given frequency $\omega=1.2$Hz and phase shift $\phi_0$ over the time interval $t=0...10$ at discrete time intervals dt=0.001 s.
-  \item Visualize f$^2$(t). What happens if you reduced dt to 1 s ?
+  \item Visualize $f(t)=\sin(\omega t + \phi_0)$ for a given frequency $\omega=1.2$Hz and phase shift $\phi_0$ over the time interval $t=0...10$ at discrete time intervals $dt=0.001$ s.
+  \item Visualize $f^2(t)$. What happens if you reduced dt to 1 s ?
   \item Visualize a Gaussian peak:
   $$
   f(x) = Ae^{-\frac{(x-x_0)^2}{\sigma_x}}
@@ -87,10 +87,4 @@ Visualize a 2D Gaussian peak:
 $$
 f(x,y) = Ae^{-\frac{(x-x_0)^2}{\sigma_x}-\frac{(y-y_0)^2}{\sigma_y}}
 $$
-using a nested for loop. This is harder. In essence you will need to fill a 2D array and visualize it with colors using plt.pcolormesh(). Then do the same but replace the nested for loops using numpys "meshgrid". What is easier?
-
-. This is harder. In essence you will need to fill a 2D array and visualize it with colors using plt.pcolormesh(). Then do the same but replace the nested for loops using numpys "meshgrid". What is easier?
-
-
-
-
+using a nested for loop. This is harder. In essence you will need to fill a 2D array and visualize it with colors using \verb|plt.pcolormesh()|. Then do the same but replace the nested for loops using numpys \verb|"meshgrid"|. What is easier?
