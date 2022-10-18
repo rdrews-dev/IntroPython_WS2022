@@ -11,8 +11,11 @@ dependencies = Figures/20181031_140359.jpg \
 	Includes/Ex0.tex \
 	Includes/Ex1.tex \
 	Includes/Ex2.tex \
+	Includes/Ex3.tex \
 	Includes/ExAdvanced.tex \
-	Src/Ex1/HelloWorld.py 
+	Src/Ex0/PlotExample.py \
+	Src/Ex1/HelloWorld.py \
+	Src/Ex3/UserInput.py 
 
 CollectionExercises.pdf: CollectionExercises.tex Header.tex ${dependencies}
 	pdflatex CollectionExercises.tex
