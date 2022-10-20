@@ -26,8 +26,6 @@ After the first subtle introduction, you should be able to fill out this table (
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
   watermark color=white]
   \begin{center}
-      \label{tab:table1}
-      % \begin{tabular}{l|l|l} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
         \begin{tabularx}{\linewidth}{ X | X | X }
         \textbf{Data Type} & \textbf{How to write in Python?} & \textbf{Geo- Env. Context}\\
         \hline
@@ -61,7 +59,7 @@ Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keel
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
   watermark color=white]
-  Test Python environment
+  Keeling raw data
   \lstinputlisting[language=Python]{Src/Ex1/KeelingRawData.py}
 \end{tcolorbox}
 \fi
@@ -94,7 +92,7 @@ Start a new for loop block and calculate the time derivative of the time series.
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
   watermark color=white]
-  Test Python environment
+  Kelling filter
   \lstinputlisting[language=Python]{Src/Ex1/KeelingFilter.py}
 \end{tcolorbox}
 \fi
