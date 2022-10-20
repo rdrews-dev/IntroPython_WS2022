@@ -1,0 +1,22 @@
+\section{Heat transport}
+In class we have introduced the diffusive heat equation as a partial differential equation:
+$$
+\frac{d}{dt}T = -\kappa\frac{d^2}{dx^2}T
+$$
+It determines how a given temperature profile diffuses (here one dimensionally) from a fixed initial state T(t=0,:) depending on the thermal diffusivity $\kappa$ and over the spatial coordinates x. As discussed in class, this type of differential equation occurs over a wide range of relevant Earth processes. It can be solved numerically explicilty by discretizing the derivatives:
+$$
+T^{n+1}_{i} = T^{n}_{i} + k\frac{\Delta t}{\Delta x^2}\left(T^{n}_{i-1} - 2T^{n}_{i}+T^{n}_{i+1} \right)
+$$
+
+Take a minute an understand why this equation can be discretized in this way using the time index n and the spatial index $i$. 
+
+Simulate a one dimensional soil profile with $\kappa = 5^{-7} m^2 s^{-1}$ over 10 m. Assume initially an isothermal profile of $10 C^{\circ}$, a surface temperature of $20 C^{\circ}$ and a bottom temperature of $5 C^{\circ}$. Solve the heat evolution in a nested loop. Choose small time steps. Visualize time steps in-between. What is the steady-state temperature profile? Why? Once this runs well, you can start including day-night cycles in the top boundary condition. How far do these propagate into the soil? How useful is the bottom boundary condition and how could this be changed? (Keyword Neumann and Dirchilet conditions.)
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    watermark color=white]
+
+\ifanswers
+I cannot find code in the train, but it is not if you know what you are doing. 
+\url{https://people.sc.fsu.edu/~jburkardt/py_src/fd1d_heat_explicit/fd1d_heat_explicit.py}
+\end{tcolorbox}
+\fi
