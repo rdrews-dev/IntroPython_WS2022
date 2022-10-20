@@ -57,6 +57,15 @@ Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keel
 \item Using python functions calculate basic quantities such as the mean, minimum and maximum of your time series. Are those values meaningful?
 \item Visualize only the first ten elements, the last ten elements, and elements from 20 to 30.
 \end{itemize}
+\ifanswers
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+  colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+  watermark color=white]
+  Test Python environment
+  \lstinputlisting[language=Python]{Src/Ex1/KeelingRawData.py}
+\end{tcolorbox}
+\fi
+
 
 \subsection{Visualization of mathematical functions}
 \label{sec:mathfunc}
@@ -81,7 +90,14 @@ Load the Keeling curve from \ref{sec:viskeeling} again. We have understood that 
   \item Visualize the new vector. Anything different compared to \ref{sec:viskeeling}?
 \end{itemize}
 Start a new for loop block and calculate the time derivative of the time series. Visualize it. 
-
+\ifanswers
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+  colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+  watermark color=white]
+  Test Python environment
+  \lstinputlisting[language=Python]{Src/Ex1/KeelingFilter.py}
+\end{tcolorbox}
+\fi
 \subsection{Loops continued.}
 Visualize a 2D Gaussian peak:
 $$
