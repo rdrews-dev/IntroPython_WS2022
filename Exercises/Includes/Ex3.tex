@@ -1,39 +1,36 @@
-\section{Functions and loops}
+\section{More loops}
 
-\subsection{Reading in user input, endless loops}
+\subsection{Endless loops, reading user input}
 Almost all programming languages that support loops can also have endless (infinite) loops, that is loops that never end.
-Besides a \verb|for| loop Python also has a \verb|while| loop. The syntax is very easy:
+Besides a \verb|for| loop Python also has a \verb|while| loop. The syntax is very easy: \\
 
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
-    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    colback=blue!5!white,colframe=babyblueeyes,title=While loop 1,
     watermark color=white]
-    While loop 1
     \lstinputlisting[language=Python]{Src/Ex3/While1.py}
 \end{tcolorbox}
 
-To finish a loop in Python just use the \verb|break| keyword:
+To finish a loop in Python just use the \verb|break| keyword: \\
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
-    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    colback=blue!5!white,colframe=babyblueeyes,title=While loop 2,
     watermark color=white]
-    While loop 2
     \lstinputlisting[language=Python]{Src/Ex3/While2.py}
 \end{tcolorbox}
 
-In order to read an input from the user via keyboard Python has the \verb|input()| function:
+In order to read an input from the user via keyboard Python has the \verb|input()| function: \\
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
-    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    colback=blue!5!white,colframe=babyblueeyes,title=User input 1,
     watermark color=white]
-    User input 1
     \lstinputlisting[language=Python]{Src/Ex3/Input1.py}
 \end{tcolorbox}
 
-To convert a string into a number Python has two functions: \verb|int()| and \verb|float()|.
+To convert a string into a number Python has two functions: \verb|int()| and \verb|float()|. \\
 
 Now write a function that reads in numbers from the user and calculates the total sum and prints this value at each iteration.
-The program should also print out all the numbers sorted (ascending) at the end. In order to quit the program the user has to enter \verb|'quit'| instead of a number.
+The program should also print out all the numbers sorted (ascending) at the end. In order to quit the program the user has to enter \verb|'quit'| instead of a number. \\
 
 \ifanswers
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
@@ -44,22 +41,55 @@ The program should also print out all the numbers sorted (ascending) at the end.
 \end{tcolorbox}
 \fi
 
-\subsection{Reading data from multiple files}
-At some time you have to read in multiple files one after each other and combine all the data.
-One way of doing this is to specify the files in a list:
+\subsection{Recursion}
+
+There is a third way to do loops in Python (and other programming languages as well):
+If you define a function you can call that function recursively: \\
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
-    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    colback=blue!5!white,colframe=babyblueeyes,title=Recursion with Fibonacci,
     watermark color=white]
-    Multiple files 1
+    \lstinputlisting[language=Python]{Src/Ex3/Fibonacci1.py}
+\end{tcolorbox}
+
+Mathematically the Fibonacci numbers are defined as: \\
+
+\begin{math}
+    F_{n} = \left\{
+        \begin{array}{ll}
+            0, & n == 0 \\
+            1, & n == 1 \\
+            F_{n-1} + F_{n-2}, & n > 1
+        \end{array}
+    \right.
+\end{math}
+
+Now write the Fibonacci function in a non-recursive way using a \verb|for| loop or a \verb|while| loop. \\
+
+\ifanswers
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+    colback=blue!5!white,colframe=babyblueeyes,title=Recursion with Fibonacci,
+    watermark color=white]
+    \lstinputlisting[language=Python]{Src/Ex3/Fibonacci2.py}
+\end{tcolorbox}
+\fi
+
+\subsection{Reading data from multiple files}
+At some time you have to read in multiple files one after each other and combine all the data.
+One way of doing this is to specify the files in a list: \\
+
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+    colback=blue!5!white,colframe=babyblueeyes,title=Multiple files 1,
+    watermark color=white]
     \lstinputlisting[language=Python]{Src/Ex3/Files1.py}
 \end{tcolorbox}
 
-Another way is to specify a file pattern and to load all the files that have that pattern in their name:
+Another way is to specify a file pattern and to load all the files that have that pattern in their name: \\
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
-    colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+    colback=blue!5!white,colframe=babyblueeyes,title=Multiple files 2,
     watermark color=white]
-    Multiple files 2
     \lstinputlisting[language=Python]{Src/Ex3/Files2.py}
 \end{tcolorbox}
+
+So now try to do it by yourself: Load in some data files, merge the data and make a nice plot.
