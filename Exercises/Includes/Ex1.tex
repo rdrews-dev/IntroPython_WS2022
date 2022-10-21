@@ -1,6 +1,7 @@
 
 \section{Data types and Visualization}
 After the first subtle introduction, you should be able to fill out this table ($<$ 5 mins).
+
 \subsection{Data Types}
 
     \begin{center}
@@ -47,7 +48,9 @@ After the first subtle introduction, you should be able to fill out this table (
 
 \subsection{Loading and visualization of ASCII-txt input data}
 \label{sec:viskeeling}
+
 Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keeling curve. If you don't know what this is please inform yourself. The data are decimal years in the first column and CO2 in ppm in the second column. A lack of data is marked with negative numbers.
+
 \begin{itemize}
 \item Load the data (e.g., using \verb|numpy.loadtxt()|).
 \item How many datapoints are in the time series? What are the dimensions of the data array?
@@ -55,6 +58,7 @@ Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keel
 \item Using python functions calculate basic quantities such as the mean, minimum and maximum of your time series. Are those values meaningful?
 \item Visualize only the first ten elements, the last ten elements, and elements from 20 to 30.
 \end{itemize}
+
 \ifanswers
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
@@ -67,7 +71,9 @@ Load the file \verb|monthly_in_situ_co2_mlo_ready4loading.txt| which is the Keel
 
 \subsection{Visualization of mathematical functions}
 \label{sec:mathfunc}
-Make use of some numpy functions (arange) and get a feel for some vector manipulation.
+
+Make use of some numpy functions (\verb|arange|) and get a feel for some vector manipulation.
+
 \begin{itemize}
   \item Visualize $f(t)=\sin(\omega t + \phi_0)$ for a given frequency $\omega=1.2$Hz and phase shift $\phi_0$ over the time interval $t=0...10$ at discrete time intervals $dt=0.001$ s.
   \item Visualize $f^2(t)$. What happens if you reduced dt to 1 s ?
@@ -80,14 +86,18 @@ Make use of some numpy functions (arange) and get a feel for some vector manipul
 
 \subsection{Basic filtering and data manipulation}
 \label{sec:loops}
+
 Load the Keeling curve from \ref{sec:viskeeling} again. We have understood that no data values are marked with negative numbers. Let's remove those with a for loop (there are better ways at a later stage). Take your time, if this is your first time of writing a loop this can take some time.
+
 \begin{itemize}
   \item Print all CO$_2$ values on the screen using a for loop. (How could this be done much easier?)
   \item Print only the time intervals where no data are available
   \item Create a new vector where the no-data values are removed.
   \item Visualize the new vector. Anything different compared to \ref{sec:viskeeling}?
 \end{itemize}
+
 Start a new for loop block and calculate the time derivative of the time series. Visualize it. 
+
 \ifanswers
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
   colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
@@ -96,9 +106,30 @@ Start a new for loop block and calculate the time derivative of the time series.
   \lstinputlisting[language=Python]{Src/Ex1/KeelingFilter.py}
 \end{tcolorbox}
 \fi
+
 \subsection{Loops continued.}
 Visualize a 2D Gaussian peak:
+
 $$
 f(x,y) = Ae^{-\frac{(x-x_0)^2}{\sigma_x}-\frac{(y-y_0)^2}{\sigma_y}}
 $$
+
 using a nested for loop. This is harder. In essence you will need to fill a 2D array and visualize it with colors using \verb|plt.pcolormesh()|. Then do the same but replace the nested for loops using numpys \verb|"meshgrid"|. What is easier?
+
+\ifanswers
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+  colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+  watermark color=white]
+  2D Gauss
+  \lstinputlisting[language=Python]{Src/Ex1/2DGauss1.py}
+\end{tcolorbox}
+\fi
+
+\ifanswers
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,
+  colback=blue!5!white,colframe=babyblueeyes,title=Solutions,
+  watermark color=white]
+  2D Gauss
+  \lstinputlisting[language=Python]{Src/Ex1/2DGauss2.py}
+\end{tcolorbox}
+\fi
