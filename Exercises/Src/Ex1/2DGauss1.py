@@ -15,10 +15,10 @@ sig_x = 400.0
 sig_y = 400.0
 
 for x in range(0, lenX):
-   for y in range(0, lenY):
-       t1 = ((x - x0)**2) / sig_x
-       t2 = ((y - y0)**2) / sig_y
-       G[x, y] = A * exp(-t1 - t2)
+    for y in range(0, lenY):
+        t1 = ((x - x0)**2) / sig_x
+        t2 = ((y - y0)**2) / sig_y
+        G[x, y] = A * exp(-t1 - t2)
 
 fig, ax = plt.subplots()
 ax.pcolormesh(G)
