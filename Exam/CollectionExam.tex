@@ -1,0 +1,28 @@
+\documentclass[a4paper,12pt]{article}
+%All Layout Packages are defined in the Header.tex
+\include{Header}
+\newif\ifanswers
+\answerstrue % comment out to hide answers
+
+
+
+
+\begin{document}
+\newcounter{mycounter}
+\setcounter{section}{-1}
+\begingroup
+\let\clearpage\relax
+    \include{Includes/Ex0}
+    \pagebreak          
+    %\include{Includes/Ex1}
+    %\pagebreak
+    %\include{Includes/Ex2}
+    %\pagebreak
+    %\include{Includes/Ex3}
+    %\pagebreak
+    %\include{Includes/Ex4}
+    %\pagebreak
+    %\include{Includes/ExAdvanced}
+\endgroup
+   
+\end{document}
