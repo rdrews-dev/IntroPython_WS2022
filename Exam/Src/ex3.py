@@ -5,8 +5,9 @@ def filter_data(d):
     result = []
     values = []
     for i in range(len(d)):
-        if d[i] > -9000.0:
-            values.append(d[i])
+        v = d[i]
+        if v > -9000.0:
+            values.append(v)
             if len(values) == 24:
                 result.append(sum(values) / 24.0)
                 values = []
